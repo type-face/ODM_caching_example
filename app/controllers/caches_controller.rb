@@ -14,14 +14,14 @@ class CachesController < ApplicationController
   end
 
   def show_cached 
-    expires_in 1.minutes, public: true
+    # expires_in 1.minutes, public: true
     @cache = Cache.find(1)
 
-    if stale? (@cache)
-      respond_to do |format|
-        format.html
-      end
-    end
+    # if stale? (@cache)
+    #   respond_to do |format|
+    #     format.html
+    #   end
+    # end
    
    fresh_when(@cache, public: true) 
   end
